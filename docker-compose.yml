@@ -1,0 +1,72 @@
+version: '2'
+
+services:
+    web:
+        build:
+            context: .
+            dockerfile: opt/nginx/Dockerfile
+        ports:
+            - 9080:80
+            - 9443:443
+        depends_on:
+            - php-fpm
+            - app
+        volumes_from:
+            - app
+        # volumes:
+        #     - ./opt/nginx/nginx.conf:/etc/nginx/nginx.conf
+        #     - ./opt/nginx/site.conf:/etc/nginx/conf.d/default.conf
+
+    php-fpm:
+        build:
+            context: .
+            dockerfile: opt/php71/Dockerfile
+        working_dir: /var/www
+        depends_on:
+            - redis
+            - mariadb
+            - app
+        volumes_from:
+          - app
+        environment:
+          - DOCKER_DEV=1
+          - HOST_ADDRESS=192.168.77.4
+
+    redis:
+        image: redis
+
+    rabbitmq:
+        image: rabbitmq
+
+    mariadb:
+        image: mariadb:10.1
+        ports:
+            - 3309:3306
+        environment:
+            - MYSQL_DATABASE=symfony
+            - MYSQL_ROOT_PASSWORD=rootPassword
+            - MYSQL_USER=devUser
+            - MYSQL_PASSWORD=devPassword
+        # volumes:
+            #- ./opt/db/db.sql:/docker-entrypoint-initdb.d/db.sql
+
+    postfix:
+        build:
+            context: .
+            dockerfile: opt/postfix/Dockerfile
+
+    appworker:
+        image: nginx:latest
+        volumes_from:
+            - app
+        depends_on:
+            - app
+        entrypoint: /bin/sh -c /opt/app/entrypoint.sh
+        volumes:
+            - ./opt/app:/opt/app
+
+    app:
+        image: busybox
+        stdin_open: true
+        volumes:
+            - .:/var/www
