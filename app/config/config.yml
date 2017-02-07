@@ -35,6 +35,16 @@ framework:
     php_errors:
         log: true
 
+endroid_twitter:
+    consumer_key: '%env(TWITTER_KEY)%'
+    consumer_secret: '%env(TWITTER_SEC)%'
+    access_token: '%env(TWITTER_ACC_TOKEN)%'
+    access_token_secret: '%env(TWITTER_ACC_SEC)%'
+
+nilportugues_json_api:
+    mappings:
+        - "%kernel.root_dir%/config/serializer/"
+        - "@StrayobjectTwitterstatsBundle/Resources/config/Mappings"
 
 # Twig Configuration
 twig:

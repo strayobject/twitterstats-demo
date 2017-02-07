@@ -1,3 +1,8 @@
+strayobject_twitterstats:
+    resource: "@StrayobjectTwitterstatsBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
