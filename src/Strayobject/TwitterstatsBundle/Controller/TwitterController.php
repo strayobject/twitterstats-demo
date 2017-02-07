@@ -17,7 +17,7 @@ use Symfony\Component\HttpFoundation\Response;
 class TwitterController extends Controller
 {
     /**
-     * @Route("/")
+     * @Route("/", name="home")
      */
     public function indexAction(Request $request): Response
     {
