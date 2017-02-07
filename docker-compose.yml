@@ -6,8 +6,8 @@ services:
             context: .
             dockerfile: opt/nginx/Dockerfile
         ports:
-            - 9080:80
-            - 9443:443
+            - 9081:80
+            - 9444:443
         depends_on:
             - php-fpm
             - app
@@ -31,6 +31,10 @@ services:
         environment:
           - DOCKER_DEV=1
           - HOST_ADDRESS=192.168.77.4
+          - TWITTER_KEY=
+          - TWITTER_SEC=
+          - TWITTER_ACC_TOKEN=
+          - TWITTER_ACC_SEC=
 
     redis:
         image: redis
@@ -41,7 +45,7 @@ services:
     mariadb:
         image: mariadb:10.1
         ports:
-            - 3309:3306
+            - 3310:3306
         environment:
             - MYSQL_DATABASE=symfony
             - MYSQL_ROOT_PASSWORD=rootPassword
