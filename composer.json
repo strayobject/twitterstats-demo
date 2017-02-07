@@ -25,7 +25,10 @@
         "incenteev/composer-parameter-handler": "^2.0",
         "predis/predis": "^1.1",
         "snc/redis-bundle": "^2",
-        "sentry/sentry-symfony": "^0"
+        "sentry/sentry-symfony": "^0",
+        "endroid/twitter": "^1.3",
+        "nilportugues/jsonapi-bundle": "^1",
+        "nelmio/api-doc-bundle": "^2"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",

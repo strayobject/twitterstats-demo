@@ -17,6 +17,10 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new AppBundle\AppBundle(),
             new Snc\RedisBundle\SncRedisBundle(),
+            new Endroid\Twitter\Bundle\EndroidTwitterBundle(),
+            new NilPortugues\Symfony\JsonApiBundle\NilPortuguesSymfonyJsonApiBundle(),
+            new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
+            new Strayobject\TwitterstatsBundle\StrayobjectTwitterstatsBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
