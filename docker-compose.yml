@@ -30,11 +30,11 @@ services:
           - app
         environment:
           - DOCKER_DEV=1
-          - HOST_ADDRESS=192.168.77.4
-          - TWITTER_KEY=
-          - TWITTER_SEC=
-          - TWITTER_ACC_TOKEN=
-          - TWITTER_ACC_SEC=
+          - HOST_ADDRESS=${HOST_ADDRESS}
+          - TWITTER_KEY=${TWITTER_KEY}
+          - TWITTER_SEC=${TWITTER_SEC}
+          - TWITTER_ACC_TOKEN=${TWITTER_ACC_TOKEN}
+          - TWITTER_ACC_SEC=${TWITTER_ACC_SEC}
 
     redis:
         image: redis
@@ -45,7 +45,7 @@ services:
     mariadb:
         image: mariadb:10.1
         ports:
-            - 3310:3306
+            - 3306
         environment:
             - MYSQL_DATABASE=symfony
             - MYSQL_ROOT_PASSWORD=rootPassword
