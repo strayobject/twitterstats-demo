@@ -1,0 +1,10 @@
+<h1>Welcome to Twitter Stats</h1>
+
+<p>Account under observation: {{ account.name }} (<a href="https://twitter.com/{{ account.screenName }}">@{{ account.screenName }}</a></p>
+<p>{{ account.description }}</p>
+<p>Stats at a glance (last updated on {{ account.updatedAt|date('jS \\o\\f F \\a\\t H:i:s') }}):</p>
+<ul>
+    <li><strong>Followers:</strong> {{ account.recentFollowerCount }}</li>
+    <li><strong>Likes:</strong> {{ account.recentLikeCount }}</li>
+    <li><strong>Retweets:</strong> {{ account.recentRetweetCount }}</li>
+</ul>

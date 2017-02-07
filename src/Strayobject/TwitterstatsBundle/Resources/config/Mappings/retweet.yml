@@ -1,0 +1,10 @@
+mapping:
+  class: Strayobject\TwitterstatsBundle\Dto\Retweet
+  aliased_properties: []
+  hide_properties: []
+  id_properties:
+    - id
+  urls:
+    self: strayobject_twitter_api_retweets_get
+  relationships: []
+

@@ -1,0 +1,13 @@
+services:
+  strayobject.twitterstats.provider.serialized_data:
+    class: Strayobject\TwitterstatsBundle\Provider\SerializedDataProvider
+    arguments:
+      - "@strayobject.twitterstats.provider.dto"
+      - "@nil_portugues.serializer.json_api_serializer"
+
+  strayobject.twitterstats.provider.dto:
+    class: Strayobject\TwitterstatsBundle\Provider\DtoProvider
+    arguments:
+      -
+        account: \Strayobject\TwitterstatsBundle\Dto\Account
+        retweet: \Strayobject\TwitterstatsBundle\Dto\Retweet

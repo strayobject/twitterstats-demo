@@ -1,0 +1,9 @@
+mapping:
+  class: Strayobject\TwitterstatsBundle\Dto\Account
+  aliased_properties: []
+  hide_properties: []
+  id_properties:
+    - id
+  urls:
+    self: strayobject_twitter_api_accounts_get
+  relationships: []
