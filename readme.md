@@ -15,10 +15,10 @@ as well as retweets per tweet.
  - run `bash composer.sh install` (in case of any error at later stage try with `update`)
  - export required env vars (you get tokens when you create a twitter app):
 ```
-TWITTER_ACC_TOKEN=XYZ
-TWITTER_KEY=XYZ
-TWITTER_ACC_SEC=XYZ
-TWITTER_SEC=XYZ
+export TWITTER_ACC_TOKEN=XYZ
+export TWITTER_KEY=XYZ
+export TWITTER_ACC_SEC=XYZ
+export TWITTER_SEC=XYZ
 
 ```
  - run `docker-compose up -d`
